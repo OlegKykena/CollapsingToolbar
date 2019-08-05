@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.android.collapsingtoolbar.view.CollapsingToolbar xmlns:android="http://schemas.android.com/apk/res/android"
+                                                              xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                              android:id="@+id/background"
+                                                              app:layoutDescription="@xml/collapsing_toolbar_motion_scene"
+                                                              android:layout_width="match_parent"
+                                                              android:layout_height="wrap_content"
+                                                              android:minHeight="100dp"
+                                                              android:fitsSystemWindows="true"
+                                                              app:layout_scrollFlags="scroll|enterAlways|snap|exitUntilCollapsed">
+
+
+    <TextView
+            android:id="@+id/label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="classic dieting"
+            style="@style/DefaultTextStyle"
+            android:textSize="16sp"/>
+
+    <TextView android:id="@+id/custom_text" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
+    <LinearLayout
+            android:id="@+id/circle"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:background="@drawable/circle_item"
+            android:orientation="vertical"
+            android:gravity="center">
+
+        <TextView
+                android:id="@+id/circle_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2225"
+                style="@style/DefaultTextStyle"
+                android:textSize="16sp"/>
+        <TextView
+                android:id="@+id/amount_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="kcal left"
+                style="@style/DefaultTextStyle"
+                android:textSize="10sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/eaten"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+        <TextView
+                android:id="@+id/eaten_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                style="@style/BigTextStyle"/>
+
+        <TextView
+                android:id="@+id/eaten_inscription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="eaten"
+                style="@style/DefaultTextStyle"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/burned"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+        <TextView
+                android:id="@+id/burned_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                style="@style/BigTextStyle"/>
+
+        <TextView
+                android:id="@+id/burned_inscription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="burned"
+                style="@style/DefaultTextStyle"/>
+    </LinearLayout>
+
+    <com.example.android.collapsingtoolbar.view.NutrientView
+            android:id="@+id/carbs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:name="carbs"
+            android:orientation="vertical"
+            app:value="228 g left"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/protein"/>
+
+    <com.example.android.collapsingtoolbar.view.NutrientView
+            android:id="@+id/protein"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:name="protein"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:value="228 g left"
+            app:layout_constraintStart_toEndOf="@+id/carbs"/>
+
+    <com.example.android.collapsingtoolbar.view.NutrientView
+            android:id="@+id/fat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:name="fat"
+            android:gravity="center"
+            app:value="228 g left"
+            app:layout_constraintStart_toEndOf="@+id/protein"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageView android:id="@+id/arrow" android:layout_width="wrap_content" android:layout_height="wrap_content"
+               app:srcCompat="@drawable/ic_keyboard_arrow_down_white_24dp"/>
+
+</com.example.android.collapsingtoolbar.view.CollapsingToolbar>
